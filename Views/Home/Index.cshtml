@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model BooksListViewModel
+
+@* Style your page using Bootstrap like we did in the videos or by following along with the
+“Applying Bootstrap Styles” section at the end of Ch. 7 in the Freeman book (p. 152-154). *@
+
+@* The Index view list out the information for each book in the database. *@
+    @foreach (Book b in Model.Books)
+    {
+        <partial name="BookInfo" model="b" />
+    }
+
+@*Add pagination to the app
+ so that we list out 10 books per page for as many books as are in the database. *@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">Page:
+        </div>
+    </div>
+</div>
+
+<div page-model="@Model.PaginationInfo" page-action="Index" page-classes-enabled="true" page-class="btn" 
+    page-class-normal="btn-outline-dark" page-class-selected="btn-primary" class="btn-group pull-right m-1"></div>

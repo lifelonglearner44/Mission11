@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Mission11</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Mission11.styles.css" asp-append-version="true" />
+</head>
+<body>
+    @* Style your page using Bootstrap like we did in the videos or by following along with the
+    “Applying Bootstrap Styles” section at the end of Ch. 7 in the Freeman book (p. 152-154). *@
+    <div class="bg-primary text-white py-3">
+        <div class="container">
+            <div class="row align-items-center">  
+                <div class="col">
+                    <h1 class="display-4">McKay's Bookstore</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+        <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    @* create a professional footer *@
+    <footer class="footer mt-auto py-2 bg-dark text-white">
+        <div class="container text-center">
+            <span>&copy; 2024 McKay's Bookstore. All rights reserved.</span>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
